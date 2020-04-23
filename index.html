@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <script src="index.js"></script>
+</body>
+</html>
+
+<!--
+    JavaScript Tutorial for Beginners: Learn JavaScript in 1 Hour [2019]
+    https://www.youtube.com/watch?v=W6NZfCO5SIk
+
+    -자바스크립트를 body 밑에서 로딩하는 이유
+    1. 컨텐츠를 스크립트보다 먼저 로딩해서 체감되는 대기 시간을 줄이기
+    2. 컨텐츠와 스크립트가 상호작용해야하기 때문에 컨텐츠부터 로딩 
+
+    -관심사의 분리 (Separation of Concern)
+    자바스크립트와 HTML을 분리
+
+    -변수명
+    1. 예약된 키워드는 쓸 수 없다
+    2. 의미있는, 설명해주는 이름으로 짓자
+    3. 숫자로 시작하면 안된다
+    4. 공백이나 하이픈(-)을 넣을 수 없다
+    5. Are case-sensitive
+    6. 모던 자바스크립트에서는 다른 변수는 각각 여러 줄에서 선언
+
+    -프리미티브 / 값 타입
+    1. String
+    2. Number
+    3. Boolean
+    4. undefined
+    5. null
+
+    -typeof [변수명 or 값]
+
+    -레퍼런스 타입
+    1. Object - 실세계의 대상들을 속성으로 표현
+    2. Array
+    3. Function
+
+    -객체 리터럴(Object Literal)
+    let obj = { key: value, ... };
+
+    --점 표기법(Dot Notation)
+    obj.key = 'This is String Literal';
+
+    --브라켓 표기법(Bracket Notation)
+    // 런타임 중 속성(프로퍼티)을 알아내서 동적으로 접근할 수 있음
+    let selection = 'name';
+    obj[selection] = 'This is String Literal';
+
+    -배열
+    1. 요소들의 목록을 표현하는데 사용되는 자료 구조
+       (Data structure that we use to represent a list of items)
+    2. 객체의 일종이다
+       따라서 점 표기법으로 원소에 접근할 수 있다
+    3. Square Bracket 으로 배열 리터럴을 선언할 때마다 자동으로 Property(속성)이 같이 선언된다
+
+    -배열 리터럴(Array Literal)
+    let arr = ['valueOne', 'valueTwo', ...];
+
+    -배열의 크기
+    동적으로 변경할 수 있다
+    arr[2] = 'valueThree'; // ['valueOne', 'valueTwo', 'valueThree']
+    arr[3] = 'valueFour';  // ['valueOne', 'valueTwo', empty, 'valueFour']
+
+    -배열의 원소의 타입
+    변수와 마찬가지로 동적으로 타입을 바꿀 수 있다
+
+    -function
+    function funcName(var1, var2, ...) {}
+    
+    --파라미터: 선언부
+    --아규먼트: 호출부, 실제 값
+
+    -Power Operator
+    2 ** 2
+
+    -Strict Equality Operator (Type + Value)
+    x === 1
+    x !== 1
+
+    -Lose Eqality Operator (Value)
+    1 == 1 // true
+    '1' == 1 // true
+    true == 1 // true (true가 1로 변환됨)
+
+    -논리적 연산자는 operand가 boolean일 필요는 없음
+
+    -Falsy (false) value
+    undefined, null, 0, false, '', NaN
+
+    -Short-circuiting
+    Lose Eqality Operator에서 두번째 Truty Operand가 무시되는 현상
+
+    false || 1 || 2 // 1. 2는 무시됨.
+
+    --값이 없으면 다른 값을 대입하는데 사용됨
+    let userColor; // undefined
+    let defaultColor = 'red';
+    console.log(userColor || defaultColor); // red
+
+    -Bitwise Operation Example
+    const readPermission = 4;       // 00000100
+    const writePermission = 2;      // 00000010
+    const executePermission = 1;    // 00000001
+
+    let myPermission = 0;
+    myPermission = myPermission | readPermission | writePermission;
+
+    let message = (myPermission & readPermission) ? 'yes' : 'no';
+    console.log(message);
+
+    -for-in loop
+    for (let key in obj) { // 값이 아닌 키 이름이 나옴
+        console.log(obj[key]); // braket notation을 이용해 프로퍼티 이름으로 값에 접근
+    }
+
+    for (let index in arr) { // 값이 아닌 인덱스 번호가 나옴
+        console.log(arr[index]);
+    }
+
+    -for-of loop
+    배열 안의 원소를 순회
+    for (let element of arr) {
+        console.log(element);
+    }
+-->
