@@ -1,11 +1,9 @@
-// for-in
-const person = {
-    name: 'Mosh',
-    age: 30,
-};
-
-const colors = ['red', 'green', 'blue'];
-
-for (let color of colors) {
-    
+// Constructor Function
+function Circle(radius) {
+    this.radius = radius;
+    this.draw = function() {
+        console.log('draw');
+    }
 }
+
+const circle = new Circle(1);
