@@ -263,6 +263,61 @@
 
     let circle = new Circle(1, { 1, 1 }, true);
 
-    new 키워드: 빈 객체를 생성함 ( {} )
-    this 키워드: new 키워드로 만들어진 객체를 지정함    
+    -new 키워드: 빈 객체를 생성함 ( {} )
+    사용하지 않으면 함수는 전역 객체를 변경하게 됨
+
+    -this 키워드: new 키워드로 만들어진 객체를 지정함
+    없을 때는 전역 객체를 변경
+
+    -
+    
+    ===============+===============+===============+===============
+
+    // const는 이미 만들어진 속성에 값을 다시 대입할 수 없을 뿐
+    const circle = {
+        radius: 1
+    }
+
+    // const에 객체의 속성과 값을 동적으로 추가할 수 있다
+    circle.color = 'yellow';
+    circle.draw = function() {};
+
+    // 지울 수도 있다
+    delete circle.color;
+    delete circle.draw;
+
+    ===============+===============+===============+===============
+    
+    -Constructor Property
+    객체를 생성할 때 사용된 함수
+
+    obj.constructor 로 볼 수 있다
+
+    리터럴은 생성자 호출과 같음
+    new Object(); // {}
+    new String(); // '', "", ``
+    new Boolean(); // true, false
+    new Number(); // 1, 2, 3, ...
+
+    // 함수 
+    function Circle(radius) {
+        this.radius = radius;
+        this.draw - function() {
+            console.log('draw');
+        }
+    }
+
+    const Circle = new Function('radius', `
+        this.radius = radius;
+        this.draw = function() {
+            console.log('draw');
+        }
+    `);
+    
+    new Circle(1);
+    // Circle.call({}, 1);
+    // Circle.apply({}, [1]); // 배열
+
+    ===============+===============+===============+===============
+
 -->
