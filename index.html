@@ -96,6 +96,9 @@
     --파라미터: 선언부
     --아규먼트: 호출부, 실제 값
 
+    -함수에 많은 파라미터가 들어갈수록 사용하기 어렵다
+    -파라미터를 적게 유지할수록 좋다
+
     ===============+===============+===============+===============
 
     -Power Operator
@@ -329,6 +332,8 @@
     -값 타입 (Value Types, Primitive Types)
     Number, String, Bolean, Symbol, undefined, null
 
+    프로퍼티나 메서드 호출시 자동으로 객체로 래핑
+
     -레퍼런스 타입 (Reference Types)
     Object, Function, Array
     
@@ -350,6 +355,10 @@
         obj.number++;
 
     전자는 아무런 영향을 주지 않지만 후자는 객체 안의 값을 실제로 바꾼다.
+
+    -레퍼런스 타입에서의 비교
+    === : 참조값(주소)를 비교함
+    값이 같은지를 비교하기 위해서는 모든 프로퍼티에 대해 직접 값을 비교해야 함
 
     ===============+===============+===============+===============
 
@@ -487,4 +496,14 @@
     now.toDateString();
     now.toTimeString();
     now.toISOString(); // 웹앱에서 흔히 쓰는 포맷. 백엔드를 구축할때 써주면 좋다.
+
+    ===============+===============+===============+===============
+
+    -타입 알아내기
+    // primitive는 제대로 표시됨, object, array는 object로 표시됨
+    typeof obj
+    // 생성자 이름으로 비교 (null, undefined 는 없음)
+    obj.constructor.name
+    // primitive 체크
+    obj === Object(obj)
 -->
