@@ -53,8 +53,7 @@ function areEqual(address1, address2) {
 
 //===============+===============+===============+===============
 
-function PriceLevel(level, levelName, highestPrice) {
-    this.level = level;
+function PriceLevel(levelName, highestPrice) {
     this.levelName = levelName;
     this.highestPrice = highestPrice;
 }
@@ -64,8 +63,10 @@ function PriceLevelModule() {
     this.CheckIntegrity = function() {
         let prevPrice = 0;
         for (let key in this.priceLevels) {
+            // PriceLevel 객체가 맞는지
             if (this.priceLevels[key].constructor.name !== 'PriceLevel')
                 return false;
+            // 이전 가격보다 현재 가격이 높은지
             if (this.priceLevels[key].highestPrice <= prevPrice)
                 return false;
 
@@ -74,7 +75,7 @@ function PriceLevelModule() {
         return true;
     };
     this.AddLevel = function(levelName, highestPrice) {
-        this.priceLevels.push(new PriceLevel(this.priceLevels.length, levelName, highestPrice));
+        this.priceLevels.push(new PriceLevel(levelName, highestPrice));
         return this.CheckIntegrity();
     };
     this.GetPriceLevelString = function(price) {
